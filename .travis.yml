@@ -1,0 +1,15 @@
+language: generic
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t jzhao5/flaskapp .
+script:
+  - docker-compose up -d
+  - docker-compose run dockerapp python test.py
+after_success:
+    - docker build -t jzhao5/flaskapp .
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push jzhao5/flaskapp
