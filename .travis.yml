@@ -2,7 +2,7 @@ language: generic
 sudo: required
 
 services:
-    - docker
+    - docker:19
 
 before_install:
     - docker build -t jzhao5/flaskapp .
