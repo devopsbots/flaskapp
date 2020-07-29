@@ -2,9 +2,9 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
       {
-        "name": "jlee_dockerapp",
+        "name": "dockerapp",
         "image": "jzhao5/flaskapp",
-        "hostname": "jlee_dockerapp",
+        "hostname": "dockerapp",
         "essential": false,
         "portMappings": [
             {
