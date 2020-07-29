@@ -14,3 +14,14 @@ after_success:
     - docker build -t jzhao5/flaskapp .
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push jzhao5/flaskapp
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "flaskapp"
+    env: "Flaskapp-env"
+    bucket_name: "myapp-demo-2020"
+    bucket_path: "docker"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
