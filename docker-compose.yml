@@ -1,7 +1,5 @@
 version: "3.0"
 services:
-  redis:
-    image: redis:3.2.0
   dockerapp:
     build: .
     ports:
