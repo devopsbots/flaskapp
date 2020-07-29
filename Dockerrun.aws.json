@@ -12,7 +12,6 @@
             "containerPort": 5000
           }
         ],
-        "links": ["redis"],
         "memory": 128,
         "environment" : [
             { "name" : "redis", "value" : "myappdemo.aw3gvq.0001.use1.cache.amazonaws.com" },
