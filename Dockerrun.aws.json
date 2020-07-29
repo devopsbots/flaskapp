@@ -12,11 +12,19 @@
             "containerPort": 5000
           }
         ],
+        "links": ["redis"],
         "memory": 128,
         "environment" : [
-            { "name" : "redis", "value" : "myappdemo.aw3gvq.0001.use1.cache.amazonaws.com" },
-            { "name" : "port", "value": "6379" }
+            { "name" : "REDIS_HOST", "value" : "myappdemo.aw3gvq.0001.use1.cache.amazonaws.com" },
+            { "name" : "REDIS_PORT", "value": "6379" },
         ]
+      },
+      {
+        "name": "redis",
+        "image": "redis",
+        "hostname": "redis",
+        "essential": true,
+        "memory": 128
       }
     ]
   }
