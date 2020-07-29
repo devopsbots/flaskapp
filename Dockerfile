@@ -6,3 +6,6 @@ WORKDIR /app
 COPY app /app
 CMD ["python", "app.py"] 
 
+FROM nginx
+EXPOSE 80
+COPY --from=0 /app/app.py /usr/share/nginx/html
