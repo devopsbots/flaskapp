@@ -13,7 +13,7 @@
           }
         ],
         "links": ["redis"],
-        "memory": 128,
+        "memory": 128
       },
       {
         "name": "redis",
