@@ -13,7 +13,11 @@
           }
         ],
         "links": ["redis"],
-        "memory": 128
+        "memory": 128,
+        "environment" : [
+            { "name" : "REDIS_HOST", "value" : "myappdemo.aw3gvq.0001.use1.cache.amazonaws.com" },
+            { "name" : "REDIS_PORT", "value": "6379" }
+        ]
       },
       {
         "name": "redis",
