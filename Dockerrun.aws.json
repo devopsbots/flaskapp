@@ -19,7 +19,6 @@
         "image": "redis:3.2.0",
         "hostname": "worker",
         "essential": true,
-        "links": ["dockerapp", "redis"],
         "memory": 128
       }
     ]
