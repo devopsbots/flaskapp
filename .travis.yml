@@ -5,9 +5,9 @@ services:
     - docker
     
 before_install:
-    - pip install docker-compose==1.15.0
     - docker build -t jzhao5/flaskapp .
 script:
+  - docker-compose up -d
   - docker-compose run dockerapp python test.py
 after_success:
     - docker build -t jzhao5/flaskapp .
