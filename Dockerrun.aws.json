@@ -5,7 +5,7 @@
         "name": "dockerapp",
         "image": "jzhao5/flaskapp",
         "hostname": "dockerapp",
-        "essential": false,
+        "essential": true,
         "portMappings": [
             {
               "hostPort": 80,
