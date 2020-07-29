@@ -1,0 +1,20 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "dockerapp",
+        "image": "jzhao5/flaskapp",
+        "hostname": "dockerapp",
+        "essential": false,
+        "memory": 128
+      },
+      {
+        "name": "redis",
+        "image": "redis:3.2.0",
+        "hostname": "redis",
+        "essential": false,
+        "memory": 128
+      }
+    ]
+  }
+  
