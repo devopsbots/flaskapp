@@ -13,11 +13,14 @@
           }
         ],
         "links": ["redis"],
-        "memory": 128,
-        "environment" : [
-            { "name" : "redis", "value" : "myappdemo.aw3gvq.0001.use1.cache.amazonaws.com" },
-            { "name" : "port", "value": "6379" }
-        ]
+        "memory": 128
+      },
+      {
+        "name": "redis",
+        "image": "redis:3.2.0",
+        "hostname": "redis",
+        "essential": true,
+        "memory": 128
       }
     ]
   }
