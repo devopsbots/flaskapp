@@ -1,11 +1,14 @@
 version: "3.0"
 services:
   dockerapp:
-    build: .
+    stdin_open: true
+    environment: 
+      - CHOKIDAR_USESPOLLING=true
+    build:
+      - dockerfile: Dockerfile
+      - context: .
     ports:
       - "80:5000"
-    depends_on:
-      - redis
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
