@@ -5,14 +5,21 @@
         "name": "dockerapp",
         "image": "jzhao5/flaskapp",
         "hostname": "dockerapp",
-        "essential": true,
+        "essential": false,
+        "portMappings": [
+            {
+              "hostPort": 80,
+              "containerPort": 5000
+            }
+        ],
         "memory": 128
       },
       {
         "name": "redis",
         "image": "redis:3.2.0",
         "hostname": "worker",
-        "essential": false,
+        "essential": true,
+        "links": ["dockerapp", "redis"],
         "memory": 128
       }
     ]
