@@ -8,7 +8,8 @@ before_install:
     - pip install docker-compose==1.15.0
     - docker build -t jzhao5/flaskapp .
 script:
-    - docker run -e CI=true jzhao5/flaskapp
+  - docker-compose up -d
+  - docker-compose run dockerapp python test.py
 after_success:
     - docker build -t jzhao5/flaskapp .
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
@@ -17,8 +18,8 @@ deploy:
     edge: true
     provider: elasticbeanstalk
     region: "us-east-1"
-    app: "flaskapp"
-    env: "Flaskapp-env"
+    app: "multiDocker"
+    env: "MultiDocker-env"
     bucket_name: "myapp-demo-2020"
     bucket_path: "docker"
     on:
