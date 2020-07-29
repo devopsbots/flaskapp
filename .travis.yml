@@ -18,8 +18,8 @@ deploy:
     edge: true
     provider: elasticbeanstalk
     region: "us-east-1"
-    app: "multi-docker"
-    env: "MultiDocker-env"
+    app: "flaskapp2"
+    env: "Flaskapp2-env"
     bucket_name: "myapp-demo-2020"
     bucket_path: "docker"
     on:
