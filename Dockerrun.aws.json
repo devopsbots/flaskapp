@@ -6,6 +6,12 @@
         "image": "jzhao5/flaskapp",
         "hostname": "dockerapp",
         "essential": true,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 5000
+          }
+        ],
         "links": ["redis"],
         "memory": 128
       },
