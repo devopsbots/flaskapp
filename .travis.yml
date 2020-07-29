@@ -8,8 +8,7 @@ before_install:
     - pip install docker-compose==1.15.0
     - docker build -t jzhao5/flaskapp .
 script:
-  - docker-compose up -d
-  - docker-compose run dockerapp python test.py
+    - docker run -e CI=true jzhao5/flaskapp
 after_success:
     - docker build -t jzhao5/flaskapp .
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
